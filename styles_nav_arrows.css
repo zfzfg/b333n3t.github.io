@@ -18,7 +18,7 @@
   text-decoration: none !important;
   backdrop-filter: blur(2px) !important;          /* Glas-Effekt */
   -webkit-backdrop-filter: blur(8px) !important;  /* Safari/iOS-Kompatibilität */
-  border: none !important);    /* dezente helle Kontur */
+  border: none !important;    /* dezente helle Kontur */
 
   display: flex !important;
   align-items: center !important;

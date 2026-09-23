@@ -30,12 +30,6 @@ function setArrowLinks() {
 
   if (left) left.setAttribute('href', prev);
   if (right) right.setAttribute('href', next);
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === "ArrowLeft") window.location.href = prev;
-    if (e.key === "ArrowRight") window.location.href = next;
-    if (e.key.toLowerCase() === "h") window.location.href = "index.html";
-  });
 }
 
 document.addEventListener('DOMContentLoaded', setArrowLinks);

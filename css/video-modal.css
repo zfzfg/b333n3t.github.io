@@ -1,0 +1,91 @@
+/* =========================================================
+   VIDEO-MODAL (INLINE-WIEDERGABE)
+   ========================================================= */
+
+.video-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 20px 20px;
+}
+
+.video-modal.open {
+    display: flex;
+}
+
+.video-modal-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0,0,0,.88);
+}
+
+.video-modal-box {
+    position: relative;
+
+    width: min(900px, 92vw);
+}
+
+.video-modal-frame {
+    position: relative;
+
+    width: 100%;
+
+    padding-top: 56.25%;
+
+    background: #000;
+}
+
+.video-modal-frame iframe {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+.video-modal-close {
+    position: absolute;
+
+    top: -46px;
+    right: 0;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+    color: #111;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 800px) {
+
+    .video-modal-close {
+        top: -42px;
+
+        width: 34px;
+        height: 34px;
+    }
+
+}
+

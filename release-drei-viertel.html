@@ -410,13 +410,15 @@
       const el = document.getElementById("awb-countdown-timer");
       if (!el) return;
 
+      let timer = null;
+
       function updateCountdown() {
         const now = Date.now();
         const diff = targetDate - now;
 
         if (diff <= 0) {
           el.textContent = "OUT NOW";
-          clearInterval(timer);
+          if (timer) clearInterval(timer);
           return;
         }
 
@@ -436,7 +438,7 @@
       }
 
       updateCountdown();
-      const timer = setInterval(updateCountdown, 1000);
+      timer = setInterval(updateCountdown, 1000);
     })();
   </script>
 

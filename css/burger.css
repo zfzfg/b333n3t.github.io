@@ -1,0 +1,139 @@
+/* =========================================================
+   BURGER-MENÜ
+   Permanent oben rechts sichtbar, über
+   allen Seiten. Öffnet per Klick/Tap
+   nach unten auf; verlässt der Mauszeiger
+   das Menü (bewegt sich nach unten davon
+   weg), schließt es sich automatisch
+   wieder.
+   ========================================================= */
+
+.burger-menu {
+    position: fixed;
+
+    top: 22px;
+    right: 22px;
+
+    z-index: 2000;
+}
+
+.burger-btn {
+    width: 46px;
+    height: 46px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+    color: #111;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+.burger-btn span {
+    display: block;
+
+    width: 18px;
+    height: 2px;
+
+    background: #111;
+
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.burger-menu.open .burger-btn span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.burger-menu.open .burger-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open .burger-btn span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.burger-dropdown {
+    position: absolute;
+
+    top: 58px;
+    right: 0;
+
+    min-width: 220px;
+
+    background: #111;
+    color: white;
+
+    padding: 10px 0;
+
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+
+    transition: opacity .2s ease, transform .2s ease;
+
+    box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+
+.burger-menu.open .burger-dropdown {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.burger-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 22px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 13px;
+    letter-spacing: .1em;
+    text-transform: lowercase;
+
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+
+    transition: background .2s ease;
+}
+
+.burger-link:hover,
+.burger-link.current {
+    background: rgba(255,255,255,.1);
+}
+
+.burger-link .num {
+    opacity: .5;
+    font-size: 11px;
+}
+
+@media (max-width: 800px) {
+
+    .burger-menu {
+        top: 16px;
+        right: 16px;
+    }
+
+    .burger-btn {
+        width: 42px;
+        height: 42px;
+    }
+
+}
+
+

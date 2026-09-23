@@ -1,0 +1,58 @@
+/* =========================================================
+   SEITE 3 – SPOTIFY
+   ========================================================= */
+
+.page-3 {
+    background: #151515;
+    color: white;
+}
+
+.page-3-content {
+    width: min(1000px, 88vw);
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.page-3-content::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.page-3 h2 {
+    font-size: clamp(50px, 8vw, 120px);
+
+    letter-spacing: -0.07em;
+
+    line-height: .85;
+
+    margin-bottom: 40px;
+}
+
+.spotify-frame {
+    /*
+        Etwas schmaler als der Container,
+        damit links/rechts noch Fläche für
+        Wisch-/Scroll-Gesten zur Seiten-
+        Navigation frei bleibt – sonst
+        schluckt das Iframe den ganzen
+        Gestenbereich.
+    */
+
+    width: 86%;
+
+    margin: 0 auto;
+
+    height: 720px;
+
+    border: none;
+
+    display: block;
+}
+
+

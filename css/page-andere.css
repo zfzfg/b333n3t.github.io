@@ -1,0 +1,470 @@
+/* =========================================================
+   SEITE 2
+   ========================================================= */
+
+.page-2 {
+    background: #788044;
+    color: #111;
+}
+
+.page-2-content {
+    width: min(1300px, 92vw);
+}
+
+.andere-header {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 35px;
+}
+
+.page-2 h2 {
+    font-size: clamp(55px, 9vw, 130px);
+
+    letter-spacing: -0.07em;
+
+    line-height: .85;
+}
+
+.andere-nav {
+    display: flex;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+.andere-nav-btn {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #111;
+
+    background: none;
+
+    color: #111;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
+}
+
+.andere-nav-btn:hover {
+    background: #111;
+
+    color: #788044;
+}
+
+.andere-grid {
+    display: flex;
+
+    gap: 18px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x proximity;
+
+    -webkit-overflow-scrolling: touch;
+
+    touch-action: pan-x;
+
+    align-items: stretch;
+
+    padding-bottom: 6px;
+
+    cursor: grab;
+}
+
+.andere-grid.dragging {
+    cursor: grabbing;
+    user-select: none;
+    scroll-snap-type: none;
+}
+
+.andere-tile {
+    flex: 0 0 auto;
+
+    width: min(360px, 78vw);
+
+    scroll-snap-align: start;
+
+    border: 1px solid rgba(0,0,0,.5);
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    height: 62vh;
+
+    overflow-y: auto;
+}
+
+/* =========================================================
+   KACHEL 06 – KONTAKT
+   ========================================================= */
+
+.tile-contact {
+    text-decoration: none;
+    color: inherit;
+
+    cursor: pointer;
+
+    transition: background .25s ease;
+}
+
+.tile-contact:hover {
+    background: rgba(0,0,0,.06);
+}
+
+/*
+    Eigener Block für Icon + Text, damit
+    "06 / kontakt" oben auf gleicher Höhe
+    wie bei den anderen Kacheln bleibt und
+    nur der Rest darunter zentriert wird.
+*/
+
+.tile-contact-body {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    text-align: center;
+}
+
+.tile-contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #111;
+
+    transition: transform .3s ease;
+}
+
+.tile-contact:hover .tile-contact-icon {
+    transform: translateY(-4px);
+}
+
+.tile-contact-label {
+    font-size: 15px;
+    letter-spacing: .05em;
+}
+
+
+.tile-label {
+    display: block;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .15em;
+
+    margin-bottom: 20px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ÜBER MICH
+   ========================================================= */
+
+.about-emoji {
+    font-size: clamp(28px, 4vw, 40px);
+
+    letter-spacing: -0.02em;
+
+    line-height: 1;
+
+    margin-bottom: 22px;
+}
+
+#about-typewriter .type-line {
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    margin-bottom: 14px;
+
+    min-height: 1.5em;
+}
+
+#about-typewriter .type-line.no-gap {
+    margin-bottom: 4px;
+}
+
+
+/* =========================================================
+   PRESSE / ARTIKEL-KARTE
+
+   Jede Presse-Kachel enthält genau eine
+   Karte, die den restlichen Platz der
+   Kachel ausfüllt.
+   ========================================================= */
+
+.tile-press .card-article {
+    flex: 1;
+
+    min-height: 220px;
+}
+
+.card-article {
+    position: relative;
+
+    display: block;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    border: 1px solid #111;
+
+    background: #111;
+
+    overflow: hidden;
+
+    min-height: 150px;
+}
+
+.radio-card {
+    width: 100%;
+
+    font: inherit;
+
+    text-align: left;
+
+    padding: 0;
+
+    cursor: pointer;
+}
+
+.radio-card.is-playing .play-label {
+    color: #ffb46f;
+}
+
+
+.card-article .thumb {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform .4s ease,
+        filter .4s ease;
+}
+
+.card-article:hover .thumb {
+    transform: scale(1.04);
+
+    filter: brightness(.75);
+}
+
+.article-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.85),
+            transparent 55%
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 14px 15px 34px;
+
+    color: white;
+
+    pointer-events: none;
+}
+
+.article-label {
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .1em;
+
+    margin-bottom: 4px;
+}
+
+.article-meta {
+    font-size: 10px;
+
+    opacity: .75;
+}
+
+.article-label:empty,
+.article-meta:empty {
+    display: none;
+}
+
+.card-article > .play-label {
+    position: absolute;
+
+    left: 15px;
+    bottom: 13px;
+
+    color: white;
+
+    font-size: 12px;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+    z-index: 4;
+}
+
+.card-article > small {
+    position: absolute;
+
+    right: 15px;
+    bottom: 13px;
+
+    color: white;
+
+    font-size: 12px;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+    z-index: 4;
+}
+
+
+/* =========================================================
+   TERMINE AKKORDEON
+   ========================================================= */
+
+.sub-group {
+    border: 1px solid rgba(0,0,0,.5);
+}
+
+.sub-toggle {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: none;
+
+    border: none;
+
+    padding: 16px 18px;
+
+    font: inherit;
+
+    color: #111;
+
+    font-size: 13px;
+
+    letter-spacing: .15em;
+
+    text-transform: uppercase;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.sub-toggle .arrow {
+    display: inline-block;
+
+    font-size: 11px;
+
+    transition: transform .25s ease;
+}
+
+.sub-toggle[aria-expanded="true"] .arrow {
+    transform: rotate(90deg);
+}
+
+.sub-content {
+    border-top: 1px solid rgba(0,0,0,.5);
+
+    padding: 18px;
+}
+
+.termine-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.termin-row {
+    display: grid;
+
+    grid-template-columns: 110px 1fr auto;
+
+    gap: 12px;
+
+    align-items: baseline;
+
+    font-size: 14px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+.termin-row:last-child {
+    border-bottom: none;
+
+    padding-bottom: 0;
+}
+
+.termin-row .datum time {
+    font-weight: 700;
+}
+
+.termin-row .ort {
+    text-align: right;
+
+    opacity: .8;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
