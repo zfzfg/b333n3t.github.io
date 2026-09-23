@@ -83,6 +83,8 @@ function setupLayers(dir) {
       nach innen zum Vorschein.
    ========================================================= */
 
+let lastMaskProgress = -1;
+
 function updateMask() {
 
     const current =
@@ -93,6 +95,18 @@ function updateMask() {
         return;
     }
 
+    const maxOpening =
+        (window.innerWidth / 2) - 1;
+
+    if (
+        lastMaskProgress >= 0 &&
+        Math.abs(progress - lastMaskProgress) * maxOpening < 0.5
+    ) {
+        return;
+    }
+
+    lastMaskProgress = progress;
+
 
     if (direction === 1) {
 
@@ -100,10 +114,6 @@ function updateMask() {
             VORWÄRTS: Spalt wächst
             von der Mitte nach außen.
         */
-
-        const maxOpening =
-            (window.innerWidth / 2) - 1;
-
 
         const opening =
             progress * maxOpening;

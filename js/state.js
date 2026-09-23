@@ -60,6 +60,11 @@ let animating = false;
 
 const OPEN_DISTANCE = 900;
 
+/* Unter 25 % fällt der Spalt zu, über 75 % läuft
+   er auf. Dazwischen bleibt er stehen. */
+const CLOSE_BELOW = 0.25;
+const OPEN_ABOVE = 0.75;
+
 /*
     Empfindlichkeit des horizontalen
     Scrollens (Kacheln / YouTube-Reihe).

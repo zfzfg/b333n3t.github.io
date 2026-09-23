@@ -523,3 +523,154 @@
     }
 }
 
+/* Reihen sind feste Flächen, kein seitliches Scroll-Menü. */
+.strip-clip {
+    overflow: visible;
+    width: 100%;
+    touch-action: pan-y;
+    padding: 14px 2px 20px;
+    box-sizing: border-box;
+}
+
+.andere-grid,
+.youtube-grid,
+.platforms-grid {
+    overflow: visible;
+    touch-action: pan-y;
+    cursor: default;
+    scroll-snap-type: none;
+    -webkit-overflow-scrolling: auto;
+}
+
+.andere-grid,
+.youtube-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    align-items: stretch;
+}
+
+.youtube-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    overflow: visible;
+}
+
+.platforms-divider {
+    display: none;
+}
+
+.andere-tile {
+    width: auto;
+    height: auto;
+    max-height: 34vh;
+    min-height: 0;
+    overflow: hidden;
+    flex: none;
+}
+
+.youtube-card {
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    max-height: 26vh;
+    flex: none;
+}
+
+.platform-tile {
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    height: min(42vh, calc((100vh - 230px) / 2));
+    min-height: 230px;
+    max-height: none;
+    flex: none;
+}
+
+.platform-link-card {
+    min-height: 0;
+    height: 100%;
+}
+
+.platform-arena {
+    flex: 1 1 auto;
+    min-height: 120px;
+}
+
+.platform-tile:hover {
+    transform: translateY(-3px);
+}
+
+.tile-termine .termine-responsive,
+.andere-tile,
+.page-3-content {
+    overflow: hidden;
+    touch-action: pan-y;
+}
+
+.page-3-content {
+    overflow: hidden;
+}
+
+.spotify-embed {
+    position: relative;
+}
+
+.spotify-shield {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.andere-nav[hidden],
+.youtube-nav[hidden],
+.platforms-nav[hidden] {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .andere-header h2,
+    .youtube-heading h2,
+    .platforms-header h2 {
+        min-width: 0;
+        font-size: clamp(32px, 10vw, 52px);
+    }
+
+    .strip-clip {
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .andere-grid,
+    .youtube-grid,
+    .platforms-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 12px;
+        width: max-content;
+        transition: transform .35s ease;
+    }
+
+    .andere-tile,
+    .youtube-card {
+        flex: 0 0 calc(100vw - 64px);
+        width: calc(100vw - 64px);
+        max-height: 58vh;
+    }
+
+    .platform-tile {
+        flex: 0 0 calc(50vw - 40px);
+        width: calc(50vw - 40px);
+        height: 52vh;
+        min-height: 240px;
+        max-height: none;
+    }
+}
+

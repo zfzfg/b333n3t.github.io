@@ -67,7 +67,7 @@ Nicht anfassen, außer der Auftrag sagt es:
 
 - Hash und Zurück-Knopf wählen die Fläche direkt, ohne Spalt-Animation. Ungültige Nummern ignorieren. `applyPageFromHash` läuft beim Laden und bei `hashchange`.
 - Vorwärts öffnet sich der Spalt von der Mitte. Rückwärts löst sich die Seite von den Rändern. Gegenläufiges Scrollen schließt den Spalt, statt sofort die Richtung zu wechseln. Ist der Spalt zu (`progress === 0`), ist keine zweite Seite mehr `behind` und die Maske ist leer.
-- Waagerechte Reihen und die Terminliste scrollen zuerst in sich. Die Seite wechselt erst am Rand. Spotify und die Reihen bleiben schmaler als der Viewport, damit die Wischfläche und der senkrechte Randtext bleiben.
+- Senkrechtes Rad und senkrechter Finger wechseln die Fläche, auch über Kacheln, YouTube-Karten, Connect und der Terminliste. Jedes Rad bewegt den Spalt sofort (`OPEN_DISTANCE` 900). Unter 25 % Offenheit fällt er zu, über 75 % läuft er auf die nächste Fläche. In den mittleren 50 % bleibt er genau so weit offen, wie gescrollt wurde. Es gibt keine seitlichen Scroll-Reihen. Auf breiten Fenstern stehen die Stücke im Raster, auf schmalen schieben die Pfeile den Ausschnitt per `transform`. Das Spotify-Embed hat eine durchsichtige Schicht, damit das Rad die Seite trifft; ein Klick gibt den Player frei.
 - YouTube spielt im Overlay. Solange es offen ist, gibt es keinen Seitenwechsel. Escape schließt und stoppt das Video.
 - Seite 1 und „drei“ zeigen zuerst nur das Play-Zeichen. Das Video startet nach Klick oder Tipp.
 - Connect-Icons sind flach. Schatten nur an der Kachel. Die Logos prallen wie ein DVD-Schoner und stehen still bei `prefers-reduced-motion`, im Hintergrund-Tab und wenn die Fläche nicht sichtbar ist.
